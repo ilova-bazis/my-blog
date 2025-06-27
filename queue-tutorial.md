@@ -1,5 +1,9 @@
-# Queue Data Structure Tutorial Using Swift
-
+---
+title: "Understanding Queues with Swift: A Real-World Example"
+date: "2025-06-24"
+excerpt: "Learn how queues work in programming using a real-world example of waiting in line at Olive Garden, with practical Swift implementations."
+tags: ["swift", "data-structures", "queues"]
+---
 The other day, I visited Olive Garden and found myself waiting in line for a table. I was fourth in the queue. The waiter explained that I’d receive a message once it was my turn, as they operated on a **first-come, first-served** basis. That’s when I remembered—queues in programming function exactly the same way as lines in real life!
 
 Unlike arrays, you cannot access random elements in a queue. Instead, a queue supports two primary operations:
