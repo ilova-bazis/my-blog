@@ -4,7 +4,6 @@ date: "2025-06-29"
 excerpt: "A clear and beginner-friendly breakdown of the LeetCode Two Sum problem, with brute-force and optimized Swift solutions using hash tables."
 tags: ["swift", "algorithms", "hash-table", "array", "LeetCode", "two-sum", "easy", "problem-solving", "interview", "data-structure"]
 ---
-# Let's solve [Two Sums](https://leetcode.com/problems/two-sum/)
 
 ## Problem Statement
 
@@ -12,7 +11,7 @@ tags: ["swift", "algorithms", "hash-table", "array", "LeetCode", "two-sum", "eas
 >You may assume that each input would have **exactly one solution**, and you may not use the same element twice.
 >You can return the answer in any order.
 
-Link to the problem: [Two Sums](https://leetcode.com/problems/two-sum/)
+Link to the problem: [Two Sum](https://leetcode.com/problems/two-sum/)
 
 ### Example
 
