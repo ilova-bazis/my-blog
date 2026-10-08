@@ -17,9 +17,9 @@ That final **қ** is a perfectly legitimate Tajik Cyrillic letter. It just has n
 
 ## Was it the UI?
 
-My first question was whether the interface was accidentally appending it. A keyboard issue? A string concatenation bug?
+My first question was whether the UI was accidentally appending it. A string concatenation bug?
 
-The saved prediction files answered that: the character appeared before predictions were integrated into the UI.
+Then I started looking directly with the fine-tuned model. The saved prediction files answered that: the character appeared before predictions were integrated into the UI.
 
 On our 29 English test lines:
 
@@ -36,18 +36,18 @@ The model had learned this little signature all by itself.
 
 ## A bilingual model with an uneven education
 
-We had fine-tuned a multilingual handwriting recognizer on a small dataset:
+I had fine-tuned a multilingual handwriting recognizer on a small dataset:
 
 - **129 Tajik training lines**
 - **24 English training lines**
 
-The pretrained model lacked the Tajik-specific letters we needed, so fine-tuning expanded its output alphabet.
+The pretrained model lacked some Tajik-specific characters I needed, so I expanded its output vocabulary before fine-tuning.
 
 That worked: the model began producing Tajik characters. Tajik character error rate on the original test crops dropped from **23.5% to 17.5%**.
 
-But the English output acquired an unexpected souvenir.
+But the English output acquired an unexpected behaviour.
 
-The imbalance is a plausible contributor, though it doesn’t fully explain why **қ** appears specifically at line endings—and only with original scans in this test. That pattern suggests the paper background or crop-edge appearance may also be involved. We haven’t confirmed the exact trigger yet.
+The imbalance is a plausible contributor, though it doesn’t fully explain why **қ** appears specifically at line endings—and only with original scans in this test. That pattern suggests the paper background or crop-edge appearance may also be involved. I haven’t confirmed the exact trigger yet.
 
 ## Better overall doesn’t mean better everywhere
 
@@ -59,11 +59,11 @@ A model can improve on average and still develop a very visible bad habit.
 
 ## What comes next?
 
-We’ll investigate the end-of-line predictions, balance the training exposure, and collect more English pages. Since we already label each line’s language, we can also test language-aware decoding.
+There’s more to investigate. My next step is to add more English pages and reduce the imbalance in the fine-tuning data. Since I already label each line by language, I also want to experiment with language-aware decoding.
 
 Simply removing every trailing **қ** would hide the symptom. I’d rather understand why it appears—and make sure fixing it doesn’t just replace it with a different wrong character.
 
-For now, it’s a useful reminder that fine-tuning isn’t a magic “make it better” button.
+For now, it’s a useful reminder that fine-tuning isn’t a magic “make it better” approach.
 
 Sometimes it teaches your model another language.
 
